@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 
-function Header() {
+function Header({ onClickCart }) {
     return (
         <header className={styles.header}>
             <div className={`${styles.header__block} d-flex justify-between align-center`}>
@@ -14,7 +14,7 @@ function Header() {
                 <div className={styles.header__nav}>
                     <nav>
                         <ul className="d-flex">
-                            <li>
+                            <li onClick={onClickCart}>
                                 <img src="../img/cart.svg" alt="Cart icon" />
                                 <p>1300 lei</p>
                             </li>

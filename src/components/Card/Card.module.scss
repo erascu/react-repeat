@@ -38,12 +38,19 @@
         }
     }
 
-    .item__imgs {
-        img {
-            &:first-child {
-                position: absolute;
-                z-index: 2;
-            }
+    .item__block {
+        button {
+            // background-color: none;
+            border: none;
+            position: absolute;
+            z-index: 2;
+
+            // img {
+            //     &:first-child {
+            //         position: absolute;
+            //         z-index: 2;
+            //     }
+            // }
         }
     }
 }

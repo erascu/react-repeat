@@ -1,14 +1,14 @@
 import CartCard from '../CartCard/CartCard';
 import styles from './Cart.module.scss';
 
-function Cart(cartItems) {
+function Cart({ cartItems, onClose }) {
     return (
-        <div className={styles.overlay} hidden>
+        <div className={styles.overlay}>
             <div className={styles.drawer}>
                 <div className={styles.drawer__top}>
                     <div className={styles.drawer__title}>
                         <h2>Корзина</h2>
-                        <button>
+                        <button onClick={onClose}>
                             <img src="../img/icons/close_btn.svg" alt="Close icon" />
                         </button>
                     </div>
@@ -37,7 +37,7 @@ function Cart(cartItems) {
                         </button>
                     </div> */}
                     {/* <CartCard /> */}
-                    {cartItems.cartItems.map(item => <CartCard key={item.id} title={item.title} price={item.price} imageUrl={`./img/items/${item.id}.jpg`} />)}
+                    {cartItems.map(item => <CartCard key={item.id} title={item.title} price={item.price} imageUrl={`./img/items/${item.id}.jpg`} />)}
                 </div>
                 <div className={styles.drawer__bottom}>
                     <div className="d-flex justify-between mb-20">

@@ -1,15 +1,27 @@
+import React from 'react';
+
 import styles from './Card.module.scss';
 
 function Card({ title, imageUrl, price }) {
+    const [favActive, setFavActive] = React.useState(false);
+    const [plusActive, setPlusActive] = React.useState(false);
 
-    const onClickButton = () => {
-        alert(`${title.substring(0, 20)}... - ${price} lei`)
+    const onClickPlus = () => {
+        // alert(`${title.substring(0, 20)}... - ${price} lei`);
+        setPlusActive(!plusActive);
     };
+
+    const onClickFav = () => {
+        // alert(`Item "${title.substring(0, 20)}..." added to Favourites!`);
+        setFavActive(!favActive);
+    }
 
     return (
         <div className={styles.item}>
-            <div className={styles.item__imgs}>
-                <img src="../img/icons/fav_icon.svg" alt="Add to fav icon" />
+            <div className={styles.item__block}>
+                <button onClick={onClickFav}>
+                    <img src={favActive ? "../img/icons/fav_active.svg" : "../img/icons/fav_icon.svg"} alt="Add to fav icon" />
+                </button>
                 <img width={133} height={112} src={imageUrl} alt="Sneakers" />
             </div>
             <h3>{title}</h3>
@@ -18,8 +30,8 @@ function Card({ title, imageUrl, price }) {
                     <span>Цена:</span>
                     <b>{price} lei</b>
                 </div>
-                <button onClick={onClickButton} className="d-flex justify-center align-center">
-                    <img src="../img/icons/add.svg" alt="Add icon" />
+                <button onClick={onClickPlus} className="d-flex justify-center align-center">
+                    <img src={plusActive ? "../img/icons/add_active.svg" : "../img/icons/add.svg"} alt="Add icon" />
                 </button>
             </div>
         </div>
