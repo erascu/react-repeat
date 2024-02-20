@@ -1,0 +1,44 @@
+.drawer__item {
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 30px 20px;
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border .1s ease-in-out;
+
+    &:hover {
+        border: 1px solid rgba(157, 212, 88, 0.7);
+    }
+
+    button {
+        background: none;
+        transition: opacity .1s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+
+    .drawer__left {
+        display: flex;
+        align-items: center;
+    }
+
+    .drawer__itemInfo {
+        max-width: 150px;
+        margin: 0 20px;
+
+        p {
+            margin-top: 8px;
+            font-weight: 700;
+        }
+    }
+}
