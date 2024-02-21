@@ -10,7 +10,7 @@ function CartCard({ title, price, imageUrl }) {
                     <p>{price} lei</p>
                 </div>
             </div>
-            <button>
+            <button> {/* onClick={e => e.target.parentElement.previousSibling.parentElement.remove()} */}
                 <img src="../img/icons/close_btn.svg" alt="Close icon" />
             </button>
         </div>

@@ -16,7 +16,7 @@ function Header({ onClickCart }) {
                         <ul className="d-flex">
                             <li onClick={onClickCart}>
                                 <img src="../img/cart.svg" alt="Cart icon" />
-                                <p>1300 lei</p>
+                                <p>0 lei</p>
                             </li>
                             <li>
                                 <img src="../img/fav.svg" alt="Favorite icon" />

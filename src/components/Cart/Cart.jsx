@@ -1,7 +1,7 @@
 import CartCard from '../CartCard/CartCard';
 import styles from './Cart.module.scss';
 
-function Cart({ cartItems, onClose }) {
+function Cart({ onClose, items = [] }) {
     return (
         <div className={styles.overlay}>
             <div className={styles.drawer}>
@@ -36,19 +36,19 @@ function Cart({ cartItems, onClose }) {
                             <img src="../img/icons/close_btn.svg" alt="Close icon" />
                         </button>
                     </div> */}
-                    {/* <CartCard /> */}
-                    {cartItems.map(item => <CartCard key={item.id} title={item.title} price={item.price} imageUrl={`./img/items/${item.id}.jpg`} />)}
+                    {items.map(obj => (<CartCard key={obj.id} title={obj.title} imageUrl={obj.imageUrl} price={obj.price} />))}
+                    {/* {cartItems.map(item => <CartCard key={item.id} title={item.title} price={item.price} imageUrl={`./img/items/${item.id}.jpg`} />)} */}
                 </div>
                 <div className={styles.drawer__bottom}>
                     <div className="d-flex justify-between mb-20">
                         <p>Итого:</p>
                         <div className={styles.summ__line}></div>
-                        <b>1875 lei</b>
+                        <b>0 lei</b>
                     </div>
                     <div className="d-flex justify-between mb-25">
                         <p>Налог 5%:</p>
                         <div className={styles.summ__line}></div>
-                        <b>93.75 lei</b>
+                        <b>0 lei</b>
                     </div>
                     <button className="d-flex justify-center align-center">
                         <p>Оформить заказ</p>

@@ -2,13 +2,18 @@ import React from 'react';
 
 import styles from './Card.module.scss';
 
-function Card({ title, imageUrl, price }) {
+function Card({ title, imageUrl, price, onPlus }) {
     const [favActive, setFavActive] = React.useState(false);
     const [plusActive, setPlusActive] = React.useState(false);
 
     const onClickPlus = () => {
         // alert(`${title.substring(0, 20)}... - ${price} lei`);
+        onPlus({ title, imageUrl, price });
         setPlusActive(!plusActive);
+
+        // if (plusActive === false) {
+        //     onPlus({ title, imageUrl, price });
+        // }
     };
 
     const onClickFav = () => {
