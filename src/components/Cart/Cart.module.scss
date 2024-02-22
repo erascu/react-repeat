@@ -23,6 +23,13 @@
         .drawer__top {
             flex: 1 1 auto;
             overflow: auto;
+
+            .empty {
+                position: relative;
+                top: 50%;
+                text-align: center;
+                font-size: 16px;
+            }
         }
 
         .drawer__title {

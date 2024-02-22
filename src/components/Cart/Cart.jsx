@@ -2,6 +2,7 @@ import CartCard from '../CartCard/CartCard';
 import styles from './Cart.module.scss';
 
 function Cart({ onClose, items = [] }) {
+
     return (
         <div className={styles.overlay}>
             <div className={styles.drawer}>
@@ -36,7 +37,8 @@ function Cart({ onClose, items = [] }) {
                             <img src="../img/icons/close_btn.svg" alt="Close icon" />
                         </button>
                     </div> */}
-                    {items.map(obj => (<CartCard key={obj.id} title={obj.title} imageUrl={obj.imageUrl} price={obj.price} />))}
+
+                    {(items.length === 0) ? <div className={styles.empty}>Корзина пуста</div> : items.map((obj, i) => (<CartCard key={i} title={obj.title} imageUrl={obj.imageUrl} price={obj.price} />))}
                     {/* {cartItems.map(item => <CartCard key={item.id} title={item.title} price={item.price} imageUrl={`./img/items/${item.id}.jpg`} />)} */}
                 </div>
                 <div className={styles.drawer__bottom}>
